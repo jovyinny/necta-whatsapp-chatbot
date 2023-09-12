@@ -3,7 +3,7 @@ import uvicorn
 import logging
 from sarufi import Sarufi
 from heyoo import WhatsApp
-from fastapi import FastAPI,Response, Request
+from fastapi import FastAPI,Response, Request,BackgroundTasks
 
 # Initialize FastAPI App
 
@@ -82,6 +82,7 @@ def execute_actions(actions: dict, mobile: str)->None:
     
     logging.info("No response")
 
+
 # send media
 def send_medias(medias:dict,mobile:str ,type:str)->None:
   for media in medias:
@@ -100,6 +101,7 @@ def send_medias(medias:dict,mobile:str ,type:str)->None:
     else:
         logging.error("Unrecognized type")
 
+
 # WEBHOOK ROUTE
 @app.get("/")
 async def wehbook_verification(request: Request):
@@ -112,7 +114,7 @@ async def wehbook_verification(request: Request):
     return "Invalid verification token"
 
 @app.post("/")
-async def webhook_handler(request: Request):
+async def webhook_handler(request: Request,tasks:BackgroundTasks):
 
     # Handle Webhook Subscriptions
     data = await request.json()
@@ -136,7 +138,7 @@ async def webhook_handler(request: Request):
                 message = messenger.get_message(data)
                 name = messenger.get_name(data)
                 logging.info("Message: %s", message)
-                respond(
+                tasks.add_task(respond,
                     message=message,
                     message_type=message_type,
                     mobile=mobile,
@@ -148,46 +150,11 @@ async def webhook_handler(request: Request):
                 message_id = message_response[intractive_type]["id"]
                 message_text = message_response[intractive_type]["title"]
                 logging.info(f"Interactive Message; {message_id}: {message_text}")
-                respond(
+                tasks.add_task(respond,
                     message=message_id,
                     message_type=message_type,
                     mobile=mobile,
                 )
-
-            elif message_type == "location":
-                message_location = messenger.get_location(data)
-                message_latitude = message_location["latitude"]
-                message_longitude = message_location["longitude"]
-                logging.info("Location: %s, %s", message_latitude, message_longitude)
-
-            elif message_type == "image":
-                image = messenger.get_image(data)
-                image_id, mime_type = image["id"], image["mime_type"]
-                image_url = messenger.query_media_url(image_id)
-                image_filename = messenger.download_media(image_url, mime_type)
-                logging.info(f"{mobile} sent image {image_filename}")
-
-            elif message_type == "video":
-                video = messenger.get_video(data)
-                video_id, mime_type = video["id"], video["mime_type"]
-                video_url = messenger.query_media_url(video_id)
-                video_filename = messenger.download_media(video_url, mime_type)
-                logging.info(f"{mobile} sent video {video_filename}")
-
-
-            elif message_type == "audio":
-                audio = messenger.get_audio(data)
-                audio_id, mime_type = audio["id"], audio["mime_type"]
-                audio_url = messenger.query_media_url(audio_id)
-                audio_filename = messenger.download_media(audio_url, mime_type)
-                logging.info(f"{mobile} sent audio {audio_filename}")
-
-            elif message_type == "file":
-                file = messenger.get_file(data)
-                file_id, mime_type = file["id"], file["mime_type"]
-                file_url = messenger.query_media_url(file_id)
-                file_filename = messenger.download_media(file_url, mime_type)
-                logging.info(f"{mobile} sent file {file_filename}")
             else:
                 print(f"{mobile} sent {message_type}\n{data}")
         else:
@@ -217,9 +184,7 @@ async def webhook_sarufi(request: Request):
       recipient_id=sender_id
     )
   elif data.get("ufaulu_wa_shule"):
-    res=await school_summary(data,messenger)
-    print(res)
-    
+    res=await school_summary(data,messenger)    
     if res:
       image_id=res.get("image_id")
       caption=res.get("caption")
