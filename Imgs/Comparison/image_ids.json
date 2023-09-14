@@ -1,0 +1,75 @@
+{
+    "Image data": {
+        "2018_2019_csee_S4321_S4322.png": {
+            "image_id": "1374430383497494",
+            "uploaded_at": 1694073868.497534,
+            "message": "hello, sorry this was a test image",
+            "caption": "You are so lucky I used your school number by chance",
+            "file_path": "./Imgs/Performance/2018_2019_csee_S4321_S4322.png"
+        },
+        "2016_2017_csee_S4321_S4322.png": {
+            "file_path": "./Imgs/Comparison/2016_2017_csee_S4321_S4322.png",
+            "name": "2016_2017_csee_S4321_S4322.png",
+            "caption": "Ufaulu kutoka *2016 mpaka 2017*",
+            "message": "Mliganisho wa ufaulu wa shule *s4321* na *s4322*",
+            "image_id": "2036177503397464",
+            "uploaded_at": 1694629588.835603
+        },
+        "2017_2019_csee_S4321_S4322.png": {
+            "file_path": "./Imgs/Comparison/2017_2019_csee_S4321_S4322.png",
+            "name": "2017_2019_csee_S4321_S4322.png",
+            "caption": "Ufaulu kutoka *2017 mpaka 2019*",
+            "message": "Mliganisho wa ufaulu wa shule *s4321* na *s4322*",
+            "image_id": "658469192909020",
+            "uploaded_at": 1694630533.313916
+        },
+        "2015_2018_acsee_S0667_S0663.png": {
+            "file_path": "./Imgs/Comparison/2015_2018_acsee_S0667_S0663.png",
+            "name": "2015_2018_acsee_S0667_S0663.png",
+            "caption": "Ufaulu kutoka *2015 mpaka 2018*",
+            "message": "Mliganisho wa ufaulu wa shule *S0667* na *S0663*",
+            "image_id": "833505251807596",
+            "uploaded_at": 1694634852.68864
+        },
+        "2020_2021_csee_S5558_S4908.png": {
+            "file_path": "./Imgs/Comparison/2020_2021_csee_S5558_S4908.png",
+            "name": "2020_2021_csee_S5558_S4908.png",
+            "caption": "Ufaulu kutoka *2020 mpaka 2021*",
+            "message": "Mliganisho wa ufaulu wa shule *s5558* na *s4908*",
+            "image_id": "1076062496697352",
+            "uploaded_at": 1694635884.541535
+        },
+        "2018_2020_csee_S5558_S4908.png": {
+            "file_path": "./Imgs/Comparison/2018_2020_csee_S5558_S4908.png",
+            "name": "2018_2020_csee_S5558_S4908.png",
+            "caption": "Ufaulu kutoka *2018 mpaka 2020*",
+            "message": "Mliganisho wa ufaulu wa shule *s5558* na *s4908*",
+            "image_id": "322896080270007",
+            "uploaded_at": 1694668050.323219
+        },
+        "2019_2021_csee_S4908_S5558.png": {
+            "file_path": "./Imgs/Comparison/2019_2021_csee_S4908_S5558.png",
+            "name": "2019_2021_csee_S4908_S5558.png",
+            "caption": "Ufaulu kutoka *2019 mpaka 2021*",
+            "message": "Mliganisho wa ufaulu wa shule *S4908* na *S5558*",
+            "image_id": "1039190290597375",
+            "uploaded_at": 1694668660.501669
+        },
+        "2020_2020_csee_S0949_S4881.png": {
+            "file_path": "./Imgs/Comparison/2020_2020_csee_S0949_S4881.png",
+            "name": "2020_2020_csee_S0949_S4881.png",
+            "caption": "Ufaulu kutoka *2020 mpaka 2020*",
+            "message": "Mliganisho wa ufaulu wa shule *s0949* na *S4881*",
+            "image_id": "1729149464216801",
+            "uploaded_at": 1694673368.149823
+        },
+        "2018_2020_csee_S4908_S4321.png": {
+            "file_path": "./Imgs/Comparison/2018_2020_csee_S4908_S4321.png",
+            "name": "2018_2020_csee_S4908_S4321.png",
+            "caption": "Ufaulu kutoka *2018 mpaka 2020*",
+            "message": "Mliganisho wa ufaulu wa shule *s4908* na *s4321*",
+            "image_id": "1366684820866769",
+            "uploaded_at": 1694675508.413313
+        }
+    }
+}
