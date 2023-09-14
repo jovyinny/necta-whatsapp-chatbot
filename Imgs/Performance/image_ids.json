@@ -1,0 +1,70 @@
+{
+    "Image data": {
+        "2018_csee_S4321.png": {
+            "image_id": "1374430383497494",
+            "uploaded_at":1694073868.497534,
+            "message": "hello, sorry this was a test image",
+            "caption": "You are so lucky I used your school number by chance",
+            "file_path": "./Imgs/Performance/2018_csee_S4321.png"
+        },
+        "2017_csee_S4902.png": {
+            "image_id": "1015632526293041",
+            "uploaded_at":1694073868.497434,
+            "message": "School Name:OLEMEDEYE SECONDARY SCHOOL\nRegion: ARUSHA\nGPA: *3.8351*\n",
+            "caption": "Ufaulu wa shule *OLEMEDEYE SECONDARY SCHOOL*"
+        },
+        "2017_csee_S4906.png": {
+            "image_id": "854094845920064",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name: DON BOSCO SECONDARY SCHOOL\nRegion: KILIMANJARO\nGPA: *3.0760*",
+            "caption": "Ufaulu wa shule *DON BOSCO SECONDARY SCHOOL*"
+        },
+        "2017_csee_S4904.png": {
+            "image_id": "737874771222529",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name: LERAI SECONDARY SCHOOL\nRegion: KILIMANJARO\nGPA: *4.1762*\n",
+            "caption": "Ufaulu wa shule *LERAI SECONDARY SCHOOL*"
+        },
+        "2016_csee_S4904.png": {
+            "image_id": "1352083278723538",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name:LERAI SECONDARY SCHOOL\nRegion: KILIMANJARO\nGPA: *4.3728*",
+            "caption": "Ufaulu wa shule *LERAI SECONDARY SCHOOL*"
+        },
+        "2018_csee_P1573.png": {
+            "image_id": "334442515690927",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name:MLANGARINI SECONDARY SCHOOL CENTRE\nRegion: *\nGPA: ***",
+            "caption": "Ufaulu wa shule *MLANGARINI SECONDARY SCHOOL CENTRE*"
+        },
+        "2020_csee_S3660.png": {
+            "image_id": "328153889742507",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name:IHALIMBA SECONDARY SCHOOL\nRegion: IRINGA\nGPA: *4.0376*",
+            "caption": "Ufaulu wa shule *IHALIMBA SECONDARY SCHOOL*"
+        },
+        "2020_csee_S0171.png": {
+            "image_id": "624384933201742",
+            "message": "School Name:ARUSHA CATHOLIC SEMINARY\nRegion: ARUSHA\nGPA: *1.9449*",
+            "caption": "Ufaulu wa shule *ARUSHA CATHOLIC SEMINARY*"
+        },
+        "2018_csee_S4907.png": {
+            "image_id": "1738862336594236",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name: ISEKE MUUNGANO SECONDARY SCHOOL\nRegion: SINGIDA\nGPA: *4.1261*",
+            "caption": "Ufaulu wa shule *ISEKE MUUNGANO SECONDARY SCHOOL*"
+        },
+        "2018_csee_S0514.png": {
+            "image_id": "623718846553915",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name: UROKI SECONDARY SCHOOL\nRegion: KILIMANJARO\nGPA: *3.6067*",
+            "caption": "Ufaulu wa shule *UROKI SECONDARY SCHOOL*"
+        },
+        "2021_csee_S5558.png": {
+            "image_id": "712677926985059",
+            "uploaded_at":1694073868.497534,
+            "message": "School Name: BUKOBA HOPE LUTHERAN\nRegion: KAGERA\nGPA: *2.4239*",
+            "caption": "Ufaulu wa shule *BUKOBA HOPE LUTHERAN*"
+        }
+    }
+}
