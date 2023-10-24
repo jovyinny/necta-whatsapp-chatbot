@@ -1,0 +1,11 @@
+{ "name": "NECTA chatbot",
+  "description": "NECTA chatbot, i'll help you to find examination results of a student, get school performance details and compare school performance with just a click",
+  "industry": "Education/Edtech",
+  "visible_on_community": false,
+  "webhook_url": "Your webhook url",
+  "webhook_trigger_intents": [
+    "matokeo",
+    "ufaulu_wa_shule",
+    "school_comparison"
+  ]
+}

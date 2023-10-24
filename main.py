@@ -3,12 +3,16 @@ import uvicorn
 import logging
 from sarufi import Sarufi
 from heyoo import WhatsApp
+from dotenv import load_dotenv
+from typing import Optional,Dict
 from fastapi import FastAPI,Response, Request,BackgroundTasks
+from utils import structure_student_results_message,school_summary,school_comparison
 
 # Initialize FastAPI App
 
-app = FastAPI()
+app = FastAPI(title="Sarufi NECTA WhatsApp Bot")
 
+load_dotenv()
 
 messenger = WhatsApp(os.getenv("WHATSAPP_TOKEN"),
                      phone_number_id=os.getenv("PHONE_NUMBER_ID"))
@@ -168,7 +172,6 @@ async def webhook_handler(request: Request,tasks:BackgroundTasks):
 
 
 
-from utils import structure_student_results_message,school_summary
 
 @app.post("/sarufi-hook")
 async def webhook_sarufi(request: Request):
@@ -184,11 +187,11 @@ async def webhook_sarufi(request: Request):
       recipient_id=sender_id
     )
   elif data.get("ufaulu_wa_shule"):
-    res=await school_summary(data,messenger)    
-    if res:
-      image_id=res.get("image_id")
-      caption=res.get("caption")
-      message=res.get("message")
+    summary=await school_summary(data,messenger)  
+    if summary:
+      image_id=summary.get("image_id")
+      caption=summary.get("caption")
+      message=summary.get("message")
       
       messenger.send_image(image=image_id,
                            caption=caption,
@@ -198,6 +201,25 @@ async def webhook_sarufi(request: Request):
                               recipient_id=sender_id)
     else:
       messenger.send_message("Samahani sijaweza kupata  taarifa",sender_id)
+
+  elif data.get("school_comparison"):
+    comparison=await school_comparison(data,messenger)
+    
+    if comparison:
+      
+      image_id=comparison.get("image_id")
+      caption=comparison.get("caption")
+      message=comparison.get("message")
+
+      messenger.send_image(image=image_id,
+                           caption=caption,
+                           recipient_id=sender_id,
+                          link=False)
+      messenger.send_message(message=message,
+                              recipient_id=sender_id)
+    else:
+      messenger.send_message("Samahani sijaweza kupata  taarifa za mlinganisho wa shule",
+                             sender_id)
   else:
     messenger.send_message("Samahani sijaweza kupata matokeo",sender_id)
     
@@ -206,4 +228,5 @@ async def webhook_sarufi(request: Request):
 
 
 if __name__ == "__main__":
+    # using default uvicorn port 8000
     uvicorn.run("main:app",host='0.0.0.0')

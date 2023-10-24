@@ -1,7 +1,9 @@
-fastapi==0.99.1
-heyoo==0.1.0
-python-dotenv==0.21.0
-sarufi==0.1.4
-pandas==2.0.3
-matplotlib==3.7.2
-nectaapi==2.0.5
+fastapi
+heyoo
+python-dotenv
+sarufi
+pandas
+matplotlib
+nectaapi
+sqlmodel
+uvicorn

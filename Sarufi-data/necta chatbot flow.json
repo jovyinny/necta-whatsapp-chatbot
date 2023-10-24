@@ -1,0 +1,293 @@
+{
+  "matokeo_school_number": {
+    "message": [
+      "Weka namba yako ya mtihani",
+      "",
+      "_mfano: 0012_"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "[\\d]{4}",
+        "error_message": "Hakikisha namba yako ya mtihani tafadhari"
+      }
+    ],
+    "next_state": "matokeo_student_number"
+  },
+  "matokeo_student_number": {
+    "message": [
+      "Ndugu, Tafadhari subiri kidogo natafuta matokeo yako"
+    ]
+  },
+  "matokeo_exam_type_4": {
+    "message": [
+      "Weka namba yako ya shule",
+      "",
+      "_mfano: s2341_"
+    ],
+    "type": "text",
+    "next_state": "matokeo_school_number"
+  },
+  "cancel": {
+    "message": [
+      "Karibu, unaweza kuendeleo kupata huduma zetu hapa"
+    ],
+    "next_state": "end",
+    "type": "interactive",
+    "buttons": [
+      {
+        "wasiliana_nasi": "Wasiliana nasi"
+      }
+    ]
+  },
+  "matokeo_year": {
+    "message": [
+      [
+        "Chagua hapa kati ya kidato cha nne au cha sita",
+        "",
+        "1- Kidato cha 4",
+        "2- Kidato cha 6"
+      ],
+      [
+        "Tafadhari chagua hapa kati ya kidato cha nne au cha sita",
+        "",
+        "1- Kidato cha 4",
+        "2- Kidato cha 6"
+      ]
+    ],
+    "type": "text",
+    "next_state": "matokeo_exam_type",
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^[12]$",
+        "error_message": "Chagua kati ya 1 na 2"
+      }
+    ]
+  },
+  "matokeo_exam_type": {
+    "message": [
+      "Weka namba yako ya shule",
+      "",
+      "_mfano: s2341 au P2341_"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^[a-zA-Z][\\s]?[\\d]{4}$",
+        "error_message": "Tafadhari weka namba ya shule sahihi"
+      }
+    ],
+    "next_state": "matokeo_school_number"
+  },
+  "choice_matokeo_exam_type": {
+    "1692978601897": "matokeo_exam_type_4",
+    "1692978608154": "matokeo_exam_type",
+    "fallback_message": [
+      "Tafadhari chagua hapa"
+    ]
+  },
+  "ufaulu_wa_shule_school_number": {
+    "message": [
+      "Rafiki tafadhari subiri kidogo natafuta taarifa za mwaka *{{ufaulu_wa_shule_year}}* wa shule"
+    ],
+    "type": "text",
+    "next_state": "end"
+  },
+  "school_comparison_first_school": {
+    "message": [
+      "Weka shule ya pili hapa",
+      "",
+      "_Mfano: s4322_"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^[a-zA-Z][\\s]?[\\d]{4}$",
+        "error_message": "Tafadhari weka namba ya shule sahihi"
+      }
+    ],
+    "next_state": "school_comparison_second_school"
+  },
+  "school_comparison_second_school": {
+    "message": [
+      "Habari ndugu, tafadhari subiri kidogo, natafuta matokeo"
+    ]
+  },
+  "ufaulu_wa_shule_exam_type": {
+    "message": [
+      "Weka namba ya shule hapa",
+      "",
+      "_Mfano: s4908_"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^[a-zA-Z][\\s]?[\\d]{4}$",
+        "error_message": "Tafadhari weka namba ya shule sahihi: _Mfano: s4908_"
+      }
+    ],
+    "next_state": "ufaulu_wa_shule_school_number"
+  },
+  "wasiliana_nasi": {
+    "message": [
+      "Kupata huduma bora ya chatbot wasiliana na *Neurotech Africa* kupitia ",
+      "",
+      "📧 Email: info@neurotech.africa",
+      "📞 Phone: +255757294146",
+      "",
+      "Our Socials",
+      "Twitter. https://twitter.com/sarufi_ai",
+      "Instagram. https://www.instagram.com/sarufi_ai/"
+    ]
+  },
+  "school_comparison_end_year": {
+    "message": [
+      "Weka namba ya shule ya kwanza",
+      "",
+      "_Mfano: S4321_"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^[a-zA-Z][\\s]?[\\d]{4}$",
+        "error_message": "Tafadhari weka namba ya shule sahihi"
+      }
+    ],
+    "next_state": "school_comparison_first_school"
+  },
+  "ufaulu_wa_shule_year": {
+    "message": [
+      "Kwa kuchagua hapa chini tafadhari chagua aina ya mtihani",
+      "",
+      "Weka ",
+      "1. Kidato cha Nne",
+      "2. kidato cha Sita",
+      "",
+      "_Mfano: 1_"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^[12]$",
+        "error_message": "Chagua kati ya 1 na 2"
+      }
+    ],
+    "next_state": "ufaulu_wa_shule_exam_type"
+  },
+  "school_comparison_exam_type": {
+    "message": [
+      "Weka mwaka wa kuanza kulinganisha ( _Kwa sasa unaweza kuanzia 2015-2021_ )",
+      "",
+      "mfano: 2015"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^(?:201[5-9]|202[0-1])$",
+        "error_message": "Tafadhari weka mwaka kati ya 2015-2021: \\n _Mfano: 2015_"
+      }
+    ],
+    "next_state": "school_comparison_start_year"
+  },
+  "school_comparison": {
+    "message": [
+      [
+        "Unaweza kualinganisha ufaulu wa shule.",
+        "",
+        "Tafadhari chagua hapa ",
+        "1. Kidato cha Nne",
+        "2. Kidato cha Sita ",
+        "",
+        "_Mfano: 1_",
+        "",
+        "*Unaweza ku-cancel kwa kuandika _cancel_*"
+      ]
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^[12]$",
+        "error_message": "Tafadhari chagua kati ya 1 au 2"
+      }
+    ],
+    "next_state": "school_comparison_exam_type"
+  },
+  "matokeo": {
+    "message": [
+      [
+        "Karibu, kuweza kujua matokeo yako ya necta kwa miaka kuanzia 2015 hadi 2021",
+        "",
+        "Tafadhari weka mwaka wako hapa",
+        "",
+        "_mfano: 2020_",
+        "",
+        "*Unaweza ku-cancel kwa kuandika _cancel_*"
+      ]
+    ],
+    "type": "text",
+    "next_state": "matokeo_year",
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^(?:201[5-9]|202[0-1])$",
+        "error_message": "Weka mwaka kati ya 2015 - 2021"
+      }
+    ]
+  },
+  "salamu": {
+    "message": [
+      "🙌 Habari, Naweza kukusaidia kuweza kupata matokea ya NECTA kwa miaka kuanzia *2015-2021*",
+      "",
+      "Bonyeza hapa chini kujua matokea ya mwanafunzi"
+    ],
+    "next_state": "end",
+    "type": "interactive",
+    "buttons": [
+      {
+        "matokeo": "Mwanafunzi"
+      },
+      {
+        "ufaulu_wa_shule": "Ufaulu wa shule"
+      },
+      {
+        "school_comparison": "Linganisha ufaulu"
+      }
+    ]
+  },
+  "school_comparison_start_year": {
+    "message": [
+      "Weka mwaka mwingine hapa(Kati ya 2015-2021)",
+      "",
+      "Mfano: 2017"
+    ],
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^(?:201[5-9]|202[0-1])$",
+        "error_message": "Tafadhari weka mwaka kati ya 2015-2021: _Mfano: 2017_"
+      }
+    ],
+    "next_state": "school_comparison_end_year"
+  },
+  "ufaulu_wa_shule": {
+    "message": [
+      "Karibu sana unaweza kupata ufaulu wa shule hapa",
+      "",
+      "Weka mwaka",
+      "",
+      "_Mfano: 2018_",
+      "",
+      "*Unaweza ku-cancel kwa kuandika _cancel_*"
+    ],
+    "type": "text",
+    "next_state": "ufaulu_wa_shule_year",
+    "validators": [
+      {
+        "type": "custom_validation",
+        "regex": "^(?:201[5-9]|202[0-1])$",
+        "error_message": "Weka mwaka kati ya 2015 - 2021: _Mfano: 2018_"
+      }
+    ]
+  }
+}
