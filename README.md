@@ -7,3 +7,9 @@ This is implementation of [Necta API](https://github.com/vincent-laizer/NECTA-AP
 You'll need a [sarufi account](https://sarufi.io) to create your chatbot, i have included the data used by the bot and [meta developer account](https://developers.facebook.com/)--> to connect your chatbot to whatsapp
 
 With all collected, let dive a bit into some work how.
+
+## Sample
+
+The bot is  action can be seen in the gif below
+
+![Sample](./sample-test.gif)

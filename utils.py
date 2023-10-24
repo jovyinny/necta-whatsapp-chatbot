@@ -170,7 +170,6 @@ async def save_details(data:dict,messenger,table_name:str):
     if image_id is not None:
       data["uploaded_at"]=datetime.now()
       data["image_id"]=image_id
-      del data["file_path"]
 
       if table_name.lower()=="performance":
         data:Performance=Performance(**data).save()
