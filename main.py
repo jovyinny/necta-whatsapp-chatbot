@@ -14,12 +14,24 @@ app = FastAPI(title="Sarufi NECTA WhatsApp Bot")
 
 load_dotenv()
 
+# Check if all required env variables are set
+if  os.getenv("WHATSAPP_TOKEN") is None:
+    raise ValueError("WHATSAPP_TOKEN not set")
+if  os.getenv("PHONE_NUMBER_ID") is None:
+    raise ValueError("PHONE_NUMBER_ID not set")
+if os.getenv("SARUFI_API_KEY") is None:
+    raise ValueError("SARUFI_API_KEY not set")
+if  os.getenv("SARUFI_BOT_ID") is None:
+    raise ValueError("SARUFI_BOT_ID not set")
+if os.getenv("VERIFY_TOKEN") is None:
+    raise ValueError("VERIFY_TOKEN not set")
+
 messenger = WhatsApp(os.getenv("WHATSAPP_TOKEN"),
                      phone_number_id=os.getenv("PHONE_NUMBER_ID"))
 sarufi = Sarufi(api_key=os.getenv('SARUFI_API_KEY'))
 chatbot = sarufi.get_bot(os.getenv("SARUFI_BOT_ID"))
 
-VERIFY_TOKEN = "30cca545-3838-48b2-80a7-9e43b1ae8ce4"
+VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
 
 # Logging
 logging.basicConfig(
