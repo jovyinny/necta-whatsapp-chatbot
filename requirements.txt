@@ -8,7 +8,7 @@ colorama==0.4.6
 contourpy==1.1.1
 cycler==0.12.1
 exceptiongroup==1.1.3
-fastapi==0.104.0
+fastapi==0.109.1
 fonttools==4.43.1
 greenlet==3.0.0
 h11==0.14.0
