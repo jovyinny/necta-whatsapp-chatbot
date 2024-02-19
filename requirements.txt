@@ -39,7 +39,7 @@ soupsieve==2.5
 SQLAlchemy==1.4.49
 sqlalchemy2-stubs==0.0.2a35
 sqlmodel==0.0.9
-starlette==0.27.0
+starlette==0.36.2
 typing==3.7.4.3
 typing_extensions==4.8.0
 tzdata==2023.3
