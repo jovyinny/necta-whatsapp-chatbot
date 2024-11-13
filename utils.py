@@ -1,13 +1,14 @@
-import os
-import math
 import logging
-import pandas as pd
-from PIL import Image
+import math
+import os
 from datetime import datetime
-import matplotlib.pyplot as plt
-from nectaapi import student,summary,comparison
-from Database.models import Performance,Comparison
 
+import matplotlib.pyplot as plt
+import pandas as pd
+from nectaapi import comparison, student, summary
+from PIL import Image
+
+from Database.models import Comparison, Performance
 
 # Logging
 logging.basicConfig(
